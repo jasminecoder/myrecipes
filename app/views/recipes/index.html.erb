@@ -1,0 +1,19 @@
+
+            <h2>All Recipes</h2>
+            <% @recipes.each do |recipe|%>
+            <div class="row border-bottom mb-3">
+                <div class="col-md-4">
+                    <img src="images/mango-smoothie.jpg" class="img-fluid" alt="recipe photo">
+                </div>
+                <div class="col-md-8">
+                    <h5> <%= recipe.name %></h5>
+                    <p> <%= recipe.description %>
+                    </p>
+                    <p><span class="small text-danger text-uppercase">By <%= recipe.chef.chefname %></span><span class="small text-secondary text-bold"> / <%= recipe.chef.created_at.strftime("%m.%d.%Y") %></span></p>
+                </div>
+            </div>
+            <% end %> 
+
+
+
+
