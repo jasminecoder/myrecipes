@@ -1,0 +1,10 @@
+<div class="row m-5">
+    <div class="col-md-10 offset-md-1 text-center">
+        <h2 class="mb-4"><%= @recipe.name %></h2>
+        <p class="lead"><%= simple_format(@recipe.description) %></p>
+        <p><%= link_to gravatar_for(@recipe.chef), recipes_path %></p>
+        <p class="mb-1 small text-uppercase">By <%= @recipe.chef.chefname %></p>
+        <p class="small text-secondary text-bold"><%= @recipe.chef.created_at.strftime("%B %d, %Y") %></p>
+
+    </div>
+</div>

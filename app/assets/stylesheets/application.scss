@@ -14,35 +14,38 @@
  */
 @import "bootstrap";
 
-#logo {
-    font-weight: bold;
-    text-transform: uppercase;
+body {
+  color: #333;
 }
 
-#logo:hover, .navbar-light .navbar-nav .nav-link:hover {
-    color: #e2e4e2;
+#logo {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#logo:hover,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #e2e4e2;
 }
 
 .navbar-orange {
-    background-color: rgb(245, 136, 12);
-    // background-image: linear-gradient( 135deg, #97ABFF 10%, #123597 100%);
-
+  background-color: rgb(245, 136, 12);
+  // background-image: linear-gradient( 135deg, #97ABFF 10%, #123597 100%);
 }
 
 .btn-custom-primary {
-    color: white;
-    // background-image: linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%);
-    // background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);
-    // background-image: linear-gradient(to top, #a7a6cb 0%, #8989ba 52%, #8989ba 100%);
-    
+  color: white;
+  // background-image: linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%);
+  // background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);
+  // background-image: linear-gradient(to top, #a7a6cb 0%, #8989ba 52%, #8989ba 100%);
 }
 
-.jumbotron{
-    position: relative;
-    background-image: asset-url('background.jpg');
-    background-size: cover;
-    height: 50vh;
-    background-position: center;
+.jumbotron {
+  position: relative;
+  background-image: asset-url("background.jpg");
+  background-size: cover;
+  height: 50vh;
+  background-position: center;
 }
 
 // .dark-overlay {
@@ -55,14 +58,32 @@
 //     background: rgba(0, 0, 0, 0.3);
 //  }
 
- .jumbo-content {
-    letter-spacing: 1px;
-    word-spacing: 2px;
-    background-color: rgba(243, 242, 241, 0.8);
- }
- 
+.jumbo-content {
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  background-color: rgba(243, 242, 241, 0.8);
+}
+
 footer {
-    background-color: #adcbe3;
-    // background-color: rgba(255,255,50,.8);
-    
+  background-color: #adcbe3;
+  // background-color: rgba(255,255,50,.8);
+}
+
+.name a {
+  color: #333;
+}
+
+.line {
+  padding-bottom: 5px;
+  border-bottom: 3px solid #333;
+}
+
+.new-recipe-bg {
+  //   background-color: #fdffef;
+  background-color: #fffaf2;
+  border: 3px solid #fffaf2;
+}
+
+.error-message {
+  background-color: rgba(255, 0, 0, 0.2);
 }
