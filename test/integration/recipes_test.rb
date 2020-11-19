@@ -3,8 +3,7 @@ require 'test_helper'
 class RecipesTest < ActionDispatch::IntegrationTest
   def setup
     @chef = Chef.create!(chefname:"Maria", email:"maria@example.com")
-    @recipe = Recipe.create(name:"enfrijoladas", description:"Traditionally, enfrijoladas 
-    are made by dipping stale tortillas into leftover frijoles.", chef: @chef)
+    @recipe = Recipe.create(name:"enfrijoladas", description:"short description", chef: @chef)
     @recipe2 = @chef.recipes.build(name:"Iced cafe de olla", description: "Iced Café de Olla
     I love the flavor of orange zest and spices in a café de olla.")
     @recipe2.save
@@ -28,6 +27,8 @@ class RecipesTest < ActionDispatch::IntegrationTest
     assert_match @recipe.name, response.body 
     assert_match @recipe.description, response.body 
     assert_match @chef.chefname, response.body 
+    assert_select 'a[href=?]', edit_recipe_path(@recipe), text: "Edit your recipe"
+    assert_select 'a[href=?]', recipe_path(@recipe), text: "Delete your recipe"
   end
 
   test "create new valid recipe" do
@@ -53,5 +54,6 @@ class RecipesTest < ActionDispatch::IntegrationTest
     assert_template 'recipes/new'
     assert_select 'div.error-message'
   end
+
   
 end

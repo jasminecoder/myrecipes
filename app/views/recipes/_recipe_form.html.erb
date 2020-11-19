@@ -1,0 +1,46 @@
+<%= form_for @recipe do |f| %>
+<div class="form-group">
+    <%= f.text_field :name, class:"form-control", placeholder:"Recipe name"%>
+</div>
+<div class="form-group">
+    <%= f.text_area :description, class:"form-control", placeholder:"Recipe description", rows:"7" %>
+</div>
+<%
+=begin%>
+<div class="form-group">
+    <div class="form-check form-check-inline">
+        <%= f.check_box :name, class:"form-check-input"%>
+        <%= f.label :name, "Breakfast" %>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Lunch</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Dinner</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Drink</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Snack</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Healthy</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Vegetarian</label>
+    </div>
+</div>
+<%
+=end%>
+<%= f.submit class:"btn btn-danger" %>
+<% end %>
+<div class="mt-5 text-secondary text-center cancel-request-link">
+    [ <%= link_to 'Cancel Request and Return to Recipes Listing', recipes_path, class:'text-secondary' %>]
+</div>
