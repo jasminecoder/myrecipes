@@ -1,0 +1,15 @@
+<div class="container-fluid rounded-lg p-5 mb-5 new-recipe-bg">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="error-message text-danger">
+                <% if obj.errors.any? %>
+                <p class="pt-3 px-3"><%= pluralize(obj.errors.count, "error") %></p>
+                <ul class="list-unstyled px-3 pb-3">
+                    <% obj.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                    <% end %>
+                </ul>
+                <% end %>
+            </div>
+        </div>
+    </div>
