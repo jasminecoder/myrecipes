@@ -6,7 +6,7 @@
             <p class="text-uppercase mt-3"><%= @chef.chefname %></p>
         </div>
         <hr>
-        <%= render 'recipes/recipe', obj: @chef.recipes %>
-
+        <%= will_paginate @chef_recipes, list_classes: %w(pagination justify-content-center mt-2 mb-4) %>
+        <%= render 'recipes/recipe', obj: @chef_recipes %>
     </div>
 </div>
