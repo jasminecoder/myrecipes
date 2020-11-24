@@ -1,4 +1,6 @@
-class ChefsController < ApplicationController             
+class ChefsController < ApplicationController   
+    before_action :set_chef, only: [:show, :edit, :update]
+              
     def new
         @chef = Chef.new
     end
@@ -14,13 +16,28 @@ class ChefsController < ApplicationController
     end
 
     def show
-        @chef = Chef.find(params[:id])
     end
 
     def index
     end
 
+    def edit 
+    end
+
+    def update 
+        if @chef.update(chef_params)
+            flash[:success] = "Your profile was updated"
+            redirect_to @chef
+        else
+            render 'edit'
+        end
+    end
+
     private
+    def set_chef
+        @chef = Chef.find(params[:id])
+    end
+
     def chef_params
         params.require(:chef).permit(:chefname, :email, :password, :password_confirmation)
     end
