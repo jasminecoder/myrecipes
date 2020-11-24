@@ -1,19 +1,12 @@
 <div class="row">
-    <div class="col-md-8 offset-md-2 text-center">
-        <h2>Your Profile</h2>
-        <%
-=begin%>
-        <%= @chef.chefname %>
-        <p>Name <%= @chef.chefname %></p>
-        <p>Email <%= @chef.email %></p>
-        <p>Your Recipes</p>
-        <ul>
-            <li><%= @chef.recipe.first%></li>
-        </ul>
-        <%
-=end%>
+    <div class="col-md-10 offset-md-1">
+        <div class="text-center">
+            <h2 class="mb-3">Chef <%= @chef.chefname %>'s Profile </h2>
+            <%= gravatar_for @chef, size: 150 %>
+            <p class="text-uppercase mt-3"><%= @chef.chefname %></p>
+        </div>
+        <hr>
+        <%= render 'recipes/recipe', obj: @chef.recipes %>
+
     </div>
 </div>
-
-
-<%= @chef %>

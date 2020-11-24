@@ -13,8 +13,11 @@ class ChefsController < ApplicationController
         end
     end
 
-    def def show
+    def show
         @chef = Chef.find(params[:id])
+    end
+
+    def index
     end
 
     private
