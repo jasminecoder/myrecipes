@@ -7,7 +7,7 @@
         <h5 class="name"> <%= link_to recipe.name, recipe_path(recipe) %></h5>
         <p> <%= recipe.description %>
         </p>
-        <p><span class=" small text-danger text-uppercase">By <%= recipe.chef.chefname %></span><span class="small text-secondary text-bold"> / <%= recipe.chef.created_at.strftime("%m.%d.%Y") %></span></p>
+        <p><span class="small text-danger text-uppercase">By <%= recipe.chef.chefname %></span><span class="small text-secondary text-bold"> / <%= recipe.chef.created_at.strftime("%m.%d.%Y") %></span></p>
     </div>
 </div>
 
