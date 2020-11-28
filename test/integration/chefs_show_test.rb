@@ -10,6 +10,7 @@ class ChefsShowTest < ActionDispatch::IntegrationTest
   end
 
   test "should get chefs show" do
+    sign_in_as(@chef, "password")
     get chef_path(@chef)
     assert_template 'chefs/show'
     assert_select "a[href=?]", recipe_path(@recipe), text: @recipe.name

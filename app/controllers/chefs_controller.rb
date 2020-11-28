@@ -1,5 +1,7 @@
 class ChefsController < ApplicationController   
-    before_action :set_chef, only: [:show, :edit, :update]
+    before_action :set_chef, only: [:show, :edit, :update, :destroy]
+    before_action :require_user, except: [:index, :show, :new, :create]
+    before_action :require_same_user, only: [:edit, :update, :destroy]
               
     def new
         @chef = Chef.new
@@ -8,6 +10,7 @@ class ChefsController < ApplicationController
     def create
         @chef = Chef.new(chef_params)
         if @chef.save
+            session[:chef_id] = @chef.id
             flash[:success] = "Welcome #{@chef.chefname} to MyRecipes App!"
             redirect_to chef_path(@chef)
         else
@@ -36,7 +39,7 @@ class ChefsController < ApplicationController
     end
 
     def destroy 
-        Chef.find(params[:id]).destroy
+        @chef.destroy
         flash[:success] = "Chef and all associated recipes have been deleted"
         redirect_to chefs_path
     end
@@ -48,6 +51,13 @@ class ChefsController < ApplicationController
 
     def chef_params
         params.require(:chef).permit(:chefname, :email, :password, :password_confirmation)
+    end
+
+    def require_same_user 
+        if current_chef != @chef
+            flash[:danger] = "You can only edit or delete your own account"
+            redirect_to chefs_path
+        end
     end
 
 

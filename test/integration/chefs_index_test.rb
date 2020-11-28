@@ -16,6 +16,7 @@ class ChefsIndexTest < ActionDispatch::IntegrationTest
   test "should delete chef" do
     get chefs_path
     assert_template 'chefs/index'
+    sign_in_as(@chef2, "password")
     assert_difference 'Chef.count', -1 do
       delete chef_path(@chef2)
     end

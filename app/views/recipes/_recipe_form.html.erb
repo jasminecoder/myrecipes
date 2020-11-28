@@ -1,4 +1,5 @@
 <%= render 'shared/errors', obj:@recipe %>
+<% if logged_in? %>
 <div class="row">
     <div class="col-md-8 offset-md-2">
         <h2 class="mb-4"><%= title %></h2>
@@ -51,3 +52,11 @@
     </div>
 </div>
 </div>
+<% else %>
+<div class="row">
+    <div class="col-md-6 offset-md-3 mb-5">
+        <p>You need to log in to enter a new recipe</p>
+        <%= render 'chefs/login_and_signup_form'%>
+    </div>
+</div>
+<% end %>

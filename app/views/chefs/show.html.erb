@@ -4,6 +4,9 @@
             <h2 class="mb-3">Chef <%= @chef.chefname %>'s Profile </h2>
             <%= gravatar_for @chef, size: 150 %>
             <p class="text-uppercase mt-3"><%= @chef.chefname %></p>
+            <% if logged_in? && current_chef == @chef %>
+            <%= link_to 'Edit Your Profile', edit_chef_path(current_chef) %>
+            <% end %>
         </div>
         <hr>
         <%= will_paginate @chef_recipes, list_classes: %w(pagination justify-content-center mt-2 mb-4) %>

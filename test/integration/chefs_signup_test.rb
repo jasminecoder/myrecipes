@@ -8,6 +8,7 @@ class ChefsSignupTest < ActionDispatch::IntegrationTest
 
   test "should get sign up path" do
     get signup_path
+    # sign_in_as(@chef, "password")
     assert_response :success
   end
 
@@ -23,6 +24,7 @@ class ChefsSignupTest < ActionDispatch::IntegrationTest
 
   test "accept valid signup" do
     get signup_path
+    sign_in_as(@chef, "password")
     assert_difference 'Chef.count', 1 do
       post chefs_path, params:{chef:{chefname: "nenene",
         email: "nenene@example.com", password: "password", password_confirmation: "password"}}
