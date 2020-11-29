@@ -10,7 +10,7 @@
             <div class="col-md-4 ml-5 my-3 chef-name">
                 <h4 class="name"> <%= link_to chef.chefname, chef_path(chef) %></h4>
                 <p><%= pluralize(chef.recipes.count, "recipe") if chef.recipes %></p>
-                <% if logged_in? && current_chef %>
+                <% if logged_in? && current_chef.admin? && !chef.admin? %>
                 <%= link_to 'delete this chef', chef_path(chef), method: :delete, data: {confirm: 'Are you sure? Your account and your recipes will be deleted'}, class:"small text-secondary text-uppercase" %>
                 <% end %>
             </div>

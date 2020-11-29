@@ -4,6 +4,7 @@ class ChefsIndexTest < ActionDispatch::IntegrationTest
   def setup
     @chef = Chef.create!(chefname:"Maria", email:"maria@example.com", password: "password", password_confirmation: "password")
     @chef2 = Chef.create!(chefname:"lilian", email:"lilian@example.com", password: "password", password_confirmation: "password")
+    @admin_user = Chef.create!(chefname:"john", email:"john@example.com", password: "password", password_confirmation: "password", admin: true)
   end
   
   test "should get chefs listing" do
@@ -14,6 +15,7 @@ class ChefsIndexTest < ActionDispatch::IntegrationTest
   end
 
   test "should delete chef" do
+    sign_in_as(@admin_user, "password")
     get chefs_path
     assert_template 'chefs/index'
     sign_in_as(@chef2, "password")

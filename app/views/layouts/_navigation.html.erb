@@ -33,7 +33,7 @@
                 <% if logged_in? %>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        You
+                        <%= current_chef.chefname.capitalize %><span class="pl-1"><%= "Admin" if current_chef.admin? %>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <%= link_to 'Create New Recipe', new_recipe_path, class:"dropdown-item" %>
