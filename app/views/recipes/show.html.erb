@@ -3,7 +3,10 @@
         <p class="small text-left mb-4"><%= link_to 'Back to Recipes List', recipes_path %></p>
         <h2 class="mb-4"><%= @recipe.name %></h2>
         <p class="lead"><%= simple_format(@recipe.description) %></p>
-        <p><%= link_to gravatar_for(@recipe.chef), recipes_path %></p>
+        <% if @recipe.ingredients.any? %>
+        <p><span class="small">Ingredients:</span> <%= render @recipe.ingredients %></p>
+        <% end %>
+        <p><%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef) %></p>
         <p class="mb-1 small text-uppercase">By <%= @recipe.chef.chefname %></p>
         <p class="small text-secondary text-bold"><%= @recipe.chef.created_at.strftime("%B %d, %Y") %></p>
 

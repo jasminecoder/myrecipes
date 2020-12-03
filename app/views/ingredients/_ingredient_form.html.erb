@@ -1,0 +1,26 @@
+<%= render 'shared/errors', obj:@ingredient %>
+<% if logged_in? %>
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h2 class="mb-4"><%= title %></h2>
+        <%= form_for @ingredient do |f| %>
+        <div class="form-group">
+            <%= f.text_field :name, class:"form-control", placeholder:"Ingredient name"%>
+        </div>
+        <%= f.submit(@ingredient.new_record? ? "Add Ingredient" : "Update Ingredient", class:"btn btn-danger") %>
+
+        <% end %>
+        <div class="mt-5 text-secondary text-center cancel-request-link">
+            [ <%= link_to 'Cancel Request and Return to Ingredients Listing', ingredients_path, class:'text-secondary' %>]
+        </div>
+    </div>
+</div>
+</div>
+<% else %>
+<div class="row">
+    <div class="col-md-6 offset-md-3 mb-5">
+        <p>You need to log in to enter a new ingredient</p>
+        <%= render 'chefs/login_and_signup_form'%>
+    </div>
+</div>
+<% end %>

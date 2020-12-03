@@ -24,8 +24,10 @@ body {
 }
 
 #logo:hover,
-.navbar-light .navbar-nav .nav-link:hover {
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link a:hover {
   color: #e2e4e2;
+  text-decoration: none;
 }
 
 .navbar-orange {
@@ -69,7 +71,8 @@ footer {
   // background-color: rgba(255,255,50,.8);
 }
 
-.name a {
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .nav-link a {
   color: #333;
 }
 
@@ -90,4 +93,9 @@ footer {
 
 .error-message {
   background-color: rgba(255, 0, 0, 0.2);
+}
+
+span .small,
+span.small {
+  letter-spacing: 0.6px;
 }

@@ -5,8 +5,10 @@
     </div>
     <div class="col-md-8">
         <h5 class="name"> <%= link_to recipe.name, recipe_path(recipe) %></h5>
-        <p> <%= recipe.description %>
-        </p>
+        <p> <%= recipe.description %></p>
+        <% if recipe.ingredients.any? %>
+        <p><span class="small">Ingredients:</span> <%= render recipe.ingredients %></p>
+        <% end %>
         <p><span class="small text-danger text-uppercase">By <%= recipe.chef.chefname %></span><span class="small text-secondary text-bold"> / <%= recipe.chef.created_at.strftime("%m.%d.%Y") %></span></p>
         <% if logged_in? && (recipe.chef == current_chef || current_chef.admin? ) %>
 
