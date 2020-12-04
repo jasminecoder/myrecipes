@@ -9,7 +9,9 @@
         <% if recipe.ingredients.any? %>
         <p><span class="small">Ingredients:</span> <%= render recipe.ingredients %></p>
         <% end %>
-        <p><span class="small text-danger text-uppercase">By <%= recipe.chef.chefname %></span><span class="small text-secondary text-bold"> / <%= recipe.chef.created_at.strftime("%m.%d.%Y") %></span></p>
+        <p><span class="small text-danger text-uppercase">By <%= link_to recipe.chef.chefname, chef_path(recipe.chef), class:"text-danger" %></span>
+            <span class="small text-secondary text-bold"> | <%= recipe.chef.created_at.strftime("%m.%d.%Y") %></span>
+            <span class="small text-secondary text-bold">| <%= pluralize(recipe.comments.count, 'Comment') %></span></p>
         <% if logged_in? && (recipe.chef == current_chef || current_chef.admin? ) %>
 
         <p class="small"><%= link_to 'Edit your recipe', edit_recipe_path(recipe) %><span class="px-3 text-secondary">|</span><%= link_to 'Delete your recipe', recipe_path(recipe), method: :delete, data: {confirm: 'Are you sure'} %></p>
