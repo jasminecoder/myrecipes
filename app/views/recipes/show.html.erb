@@ -20,7 +20,7 @@
 <div class="row">
     <div class="col-md-6 offset-md-3">
         <% if logged_in?%>
-        <%= form_for([@recipe, @comment]) do |f| %>
+        <%= form_for([@recipe, @comment], remote: true) do |f| %>
         <div class="form-group">
             <%= f.text_area :description, class:"form-control", rows: 4, placeholder:"Any comments?"%>
         </div>
@@ -35,9 +35,11 @@
 <div class="row">
     <div class="col-md-6 offset-md-3 mb-5">
         <hr>
-        <p class="mb-3 text-secondary">Comments: <%= @recipe.comments.count %></p>
-        <div id="messages">
-            <%= render partial: 'comments/comments', object: @comments %>
+        <p class="mb-3 text-secondary">Comments:</p>
+        <div id="comments">
+            <div id="messages">
+                <%= render partial: 'comments/comments', object: @comments %>
+            </div>
         </div>
     </div>
 </div>
