@@ -18,6 +18,12 @@
 //= require popper
 //= require bootstrap-sprockets
 
-$("#myModal").on("shown.bs.modal", function () {
-  $("#myInput").trigger("focus");
+function scrollToBottom() {
+  if ($("#messages").length > 0) {
+    $("#messages").scrollTop($("#messages")[0].scrollHeight);
+  }
+}
+
+$(document).ready(function () {
+  scrollToBottom();
 });

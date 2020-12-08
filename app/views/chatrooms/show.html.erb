@@ -6,13 +6,13 @@
 <div class="row chat-container">
     <div class="col-md-6 offset-md-3">
         <div class="messages-container">
-            <%= form_for(@message)  do |f| %>
-            <%= f.text_area :content, class: "form-control mb-3", placeholder: "Writte a message"%>
-            <%= f.submit "Send", class: "btn btn-danger"%>
+            <%= form_for(@message, remote: true)  do |f| %>
+            <%= f.text_area :content, class: "form-control mb-3", data: { behavior: "room_speaker" }, placeholder: "Writte a message"%>
+            <%= f.submit "Send", class: "btn btn-danger", data: { send: "message" }%>
             <% end %>
         </div>
         <hr>
-        <div class="messages border p-2 overflow-auto mb-5" id="messages">
+        <div class="messages overflow-auto border p-2 overflow-auto mb-5" id="messages">
             <%= render @messages %>
         </div>
     </div>
