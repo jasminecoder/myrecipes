@@ -20,7 +20,7 @@ class RecipesEditTest < ActionDispatch::IntegrationTest
     sign_in_as(@chef, "password")
     get edit_recipe_path(@recipe)
     assert_template 'recipes/edit'
-    updated_name = "updated recipe name"
+    updated_name = "Updated Recipe Name"
     updated_description = "updated recipe description"
     patch recipe_path(@recipe), params: {recipe: {name: updated_name, description: updated_description }}
     assert_redirected_to @recipe
