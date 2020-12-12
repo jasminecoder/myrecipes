@@ -1,11 +1,6 @@
 <% obj.each do |recipe|%>
 <div class="row border-bottom m-3">
     <div class="col-md-4">
-        <%
-=begin%>
-        <img src="images/mango-smoothie.jpg" class="img-fluid" alt="recipe photo">
-        <%
-=end%>
     </div>
     <div class="col-md-8">
         <h5 class="name"> <%= link_to recipe.name, recipe_path(recipe) %></h5>

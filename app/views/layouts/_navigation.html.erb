@@ -9,11 +9,6 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <%= link_to raw('Recipes<span class="sr-only">(current)</span>'), recipes_path, class: "nav-link" %>
-                    <%
-=begin%>
-                    <a class="nav-link" href="#">List of Recipes <span class="sr-only">(current)</span></a>
-                    <%
-=end%>
                 </li>
                 <% if logged_in? %>
                 <li class="nav-item">
@@ -27,13 +22,6 @@
                 <li class="nav-item">
                     <%= link_to 'Chefs', chefs_path, class: "nav-link" %>
                 </li>
-                <%
-=begin%>
-                <li class="nav-item">
-                    <%= link_to 'Ingredients', ingredients_path, class: "nav-link" %>
-                </li>
-                <%
-=end%>
 
                 <li class="nav-item dropdown">
                     <div class="nav-link dropdown-toggle" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

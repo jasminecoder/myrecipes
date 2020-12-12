@@ -6,7 +6,7 @@
  * vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * compiled file so the styles you add here take precedence over style  s defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
@@ -32,14 +32,10 @@ body {
 
 .navbar-orange {
   background-color: rgb(245, 136, 12);
-  // background-image: linear-gradient( 135deg, #97ABFF 10%, #123597 100%);
 }
 
 .btn-custom-primary {
   color: white;
-  // background-image: linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%);
-  // background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);
-  // background-image: linear-gradient(to top, #a7a6cb 0%, #8989ba 52%, #8989ba 100%);
 }
 
 .jumbotron {
@@ -50,16 +46,6 @@ body {
   background-position: center;
 }
 
-// .dark-overlay {
-//     border: 1px solid green;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 50vh;
-//     background: rgba(0, 0, 0, 0.3);
-//  }
-
 .jumbo-content {
   letter-spacing: 1px;
   word-spacing: 2px;
@@ -68,7 +54,6 @@ body {
 
 footer {
   background-color: #adcbe3;
-  // background-color: rgba(255,255,50,.8);
 }
 
 .navbar-light .navbar-nav .nav-link,
@@ -86,7 +71,6 @@ footer {
 }
 
 .new-recipe-bg {
-  //   background-color: #fdffef;
   background-color: #fffaf2;
   border: 3px solid #fffaf2;
 }
@@ -103,3 +87,27 @@ span.small {
 .messages {
   height: 300px;
 }
+
+.action-count {
+  color: #333;
+}
+
+.like-btn {
+  border: none;
+  background-color: transparent;
+  // content: "hehe";
+}
+
+// .likes-box {
+//   height: 1.6em;
+//   align-content: center;
+// }
+
+// .thumb-up {
+//   color: white;
+//   background-color: rgb(40, 40, 247);
+//   height: 2em;
+//   width: 2em;
+//   padding: 5px;
+//   border-radius: 50%;
+// }

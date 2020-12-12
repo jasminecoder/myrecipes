@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
         @comment = Comment.new
     end
 
-    def new 
+    def new
         @recipe = Recipe.new
         @recipes = Recipe.all
     end
