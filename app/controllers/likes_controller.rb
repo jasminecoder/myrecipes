@@ -3,18 +3,16 @@ class LikesController < ApplicationController
     
     def create
       @recipe = Recipe.find(params[:recipe_id])
-      @like = @recipe.likes.build(like_params)
-      @like.chef = current_chef
-      @comments = @recipe.comments.paginate(page: params[:page], per_page: 5)
-      @comment = Comment.new
-      if @like.save
-        # render 'recipes/show'
-        redirect_to recipe_path(@recipe)
-        # ActionCable.server.broadcast "comments", render(partial: 'comments/comment', object: @comment)
+      @like = @recipe.likes.where(chef_id: current_chef).first_or_initialize
+      @old_liked = @like.liked      
+      @like.attributes = like_params
+      if @old_liked == @like.liked
+        @like.destroy
       else
-        flash[:danger] = "Like was not created"
-        redirect_back(fallback_location: root_path)
+        success = @like.save
+        flash[:danger] = "Like was not created" unless success
       end
+      redirect_to recipe_path(@recipe)
     end
     
     private

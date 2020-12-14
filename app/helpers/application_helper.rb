@@ -7,6 +7,10 @@ module ApplicationHelper
     end
 
     def liked_by_me?(recipe)
-        recipe.likes.any? {|like| like.chef == current_chef }
+        recipe.likes.exists?(chef_id: current_chef, liked: true )
+    end
+
+    def disliked_by_me?(recipe)
+        recipe.likes.exists?(chef_id: current_chef, liked: false )
     end
 end

@@ -12,6 +12,7 @@
  *
 
  */
+@import "font-awesome";
 @import "bootstrap";
 
 body {
@@ -92,22 +93,16 @@ span.small {
   color: #333;
 }
 
+// for like button outline
+*:focus {
+  outline: 0 !important;
+}
+
 .like-btn {
   border: none;
   background-color: transparent;
-  // content: "hehe";
 }
 
-// .likes-box {
-//   height: 1.6em;
-//   align-content: center;
-// }
-
-// .thumb-up {
-//   color: white;
-//   background-color: rgb(40, 40, 247);
-//   height: 2em;
-//   width: 2em;
-//   padding: 5px;
-//   border-radius: 50%;
-// }
+button:disabled.like-btn {
+  color: #333;
+}

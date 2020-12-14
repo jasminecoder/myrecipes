@@ -7,6 +7,7 @@ ruby '2.6.6'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
 gem 'bootstrap', '~> 4.5.3'
 gem 'jquery-rails'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
